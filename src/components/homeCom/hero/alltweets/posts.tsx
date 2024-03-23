@@ -5,7 +5,6 @@ import { LikeButton } from './buttons/likeButton'
 import { DeleteButton } from './buttons/deleteButton'
 import { UpdateButton } from './buttons/updateButton'
 import { capitalizedName } from '../../../../util/capName'
-const API_BASE_URL = import.meta.env.VITE_API_URL
 const Posts = ({
     index,
     fullname,
@@ -70,7 +69,7 @@ const Posts = ({
         <section className='tweets' key={index}>
             <div className='userProfile'>
                 <img
-                    src={`${API_BASE_URL}/${imageUrl}`}
+                    src={`${imageUrl}`}
                     alt='profile-img'
                     className='img'
                     loading='lazy'
