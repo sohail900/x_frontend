@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { useQueryClient } from '@tanstack/react-query'
 import TextAreaAutoSize from 'react-textarea-autosize'
 import { usePost } from '../../../hooks/useUserData'
-const API_BASE_URL = import.meta.env.VITE_API_URL
 const NewPost: FC = (): ReactElement => {
     const [tweet, setTweet] = useState<TweetType<string>>({ myTweet: '' })
     const [showHide, setShowHide] = useState(true)
@@ -36,7 +35,7 @@ const NewPost: FC = (): ReactElement => {
         <>
             <div className='user'>
                 <img
-                    src={`${API_BASE_URL}/${userData.imagePath}`}
+                    src={`${userData.imagePath}`}
                     alt='profile'
                     className='img'
                 />
