@@ -1,0 +1,13 @@
+@use '../abstracts/colors';
+.navbar {
+    padding: 0.8rem 0rem;
+    border-bottom: 1px solid colors.$lightGreyColor;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    backdrop-filter: blur(40px);
+    h2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+}

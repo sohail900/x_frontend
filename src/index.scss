@@ -1,0 +1,23 @@
+@use './abstracts/colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//html
+html {
+    background-color: colors.$mainColor;
+    color: colors.$fontColor;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+ul,
+li {
+    list-style: none;
+}
+input,
+button,
+textarea {
+    font-family: 'Inter', sans-serif;
+}

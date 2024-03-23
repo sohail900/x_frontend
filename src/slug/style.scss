@@ -1,0 +1,92 @@
+@use '../abstracts/colors';
+.profile-section {
+    width: auto;
+    height: 100%;
+    border-left: 1px solid colors.$lightGreyColor;
+    border-right: 1px solid colors.$lightGreyColor;
+    overflow-y: auto;
+    position: relative;
+    .profile-bannner {
+        height: 200px;
+        width: 100%;
+        background: rgba(colors.$bgColor2, 0.7);
+    }
+    .user-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0rem 2rem;
+        margin-top: -3rem;
+        .user-profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 3.5px solid #000;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            img {
+                width: 100%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+        }
+        .user-profile-content {
+            h1 {
+                font-size: clamp(1rem, 2vw, 2rem);
+            }
+            p {
+                font-size: 0.9rem;
+                font-weight: 500;
+                letter-spacing: 1px;
+                color: colors.$lightColor;
+            }
+        }
+        .user-date {
+            font-size: 0.8rem;
+            display: grid;
+            gap: 0.1rem;
+            line-height: 20px;
+            color: colors.$lightColor;
+            margin: 1rem 0rem;
+            .link {
+                text-decoration: none;
+                color: colors.$buttonColor;
+            }
+            p {
+                display: flex;
+                align-items: center;
+                span {
+                    font-size: 1rem;
+                    margin-right: 0.4rem;
+                }
+            }
+        }
+        .twitter-hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            font-weight: 500;
+            gap: 0.3rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            span {
+                color: rgba(colors.$buttonColor, 1);
+            }
+        }
+    }
+    .profile-edit-button {
+        all: unset;
+        cursor: pointer;
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        border: 1px solid colors.$lightColor;
+        color: colors.$lightColor;
+        font-weight: 500;
+        &:hover {
+            border: 1px solid colors.$buttonColor;
+            color: colors.$buttonColor;
+        }
+    }
+}

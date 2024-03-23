@@ -1,0 +1,286 @@
+@use '../../abstracts/colors';
+.signupSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(colors.$bgColor2, 0.6);
+    .model {
+        width: clamp(340px, 50vw, 500px);
+        padding: 1rem 1rem 0rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: colors.$mainColor;
+        border-radius: 10px;
+        gap: 1.5rem;
+        position: relative;
+        transition: all 400ms ease-in-out;
+        transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        @media (min-height: 600px) {
+            overflow-y: auto;
+        }
+        .modelLogo {
+            width: 3.7rem;
+            height: 3.7rem;
+            img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1/1;
+            }
+        }
+        .inputField {
+            h2 {
+                font-weight: 600;
+                font-size: 1.4rem;
+            }
+            .create-account-text {
+                font-size: 1rem;
+                color: colors.$fontColor;
+                opacity: 0.8;
+                padding: 0.3rem 0rem 1rem 0rem;
+            }
+        }
+        .inputField > form {
+            width: 300px;
+            display: grid;
+            gap: 1rem;
+            input {
+                background-color: transparent;
+                outline: none;
+                border: 1px solid colors.$bgColor2;
+                border-style: double;
+                padding: 0.7rem 0.6rem;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 1rem;
+                transition: border 200ms ease-in-out;
+                &:active,
+                &:focus {
+                    border: 1px solid colors.$fontColor;
+                }
+            }
+            .showError {
+                color: colors.$colorRed;
+                border-color: rgba(colors.$colorRed, 0.507);
+            }
+            .error {
+                color: rgba(colors.$colorRed, 0.8);
+                font-weight: 600;
+                font-size: 0.93rem;
+                margin-top: -0.6rem;
+                width: 100%;
+            }
+            button {
+                background-color: colors.$fontColor;
+                outline: none;
+                border: 1px solid colors.$lightColor;
+                padding: 0.5rem 0.6rem;
+                border-radius: 30px;
+                font-size: 1rem;
+                font-weight: 600;
+                color: colors.$mainColor;
+                cursor: pointer;
+                transition: transform 200ms ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.45rem;
+
+                .btn-icon {
+                    line-height: 50%;
+                    transition: transform 200ms ease-in-out;
+                }
+                &:hover {
+                    transform: scale(1.03);
+                }
+                &:active {
+                    transform: scale(0.98);
+                    .btn-icon {
+                        transform: translateX(10px);
+                    }
+                }
+                &:disabled {
+                    background-color: colors.$lightColor;
+                    border: none;
+                    cursor: default;
+                }
+            }
+
+            .userProfileSection {
+                width: 300px;
+                input[type='file']::file-selector-button {
+                    display: none;
+                }
+                .uploadFile {
+                    height: 150px;
+                    width: 100%;
+                    border-radius: 10px;
+                    border: 1px solid colors.$lightColor;
+                    border-style: dashed;
+                    display: grid;
+                    place-items: center;
+                    position: relative;
+                    transition: box-shadow 200ms ease-in-out;
+                    input[type='file'] {
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        position: absolute;
+                        z-index: 1;
+                        cursor: pointer;
+                    }
+                    .content {
+                        font-size: 1.2rem;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        opacity: 0.9;
+                        transition: opacity 200ms linear;
+                        opacity: 0.5;
+                        .icon {
+                            font-size: 3.3rem;
+                            line-height: 0px;
+                        }
+                        .text {
+                            font-weight: 500;
+                            font-size: 0.9rem;
+                            margin-top: 0.4rem;
+                        }
+                    }
+                    &:hover {
+                        box-shadow: rgba(#1d9bf0, 0.3) 0px 0px 2px 1px;
+                        border: none;
+                        &:active {
+                            transform: scale(0.99);
+                        }
+                        .content {
+                            opacity: 1;
+                        }
+                    }
+                } ///image preview style
+                .showImage {
+                    width: 180px;
+                    height: 180px;
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10%;
+                        object-fit: cover;
+                    }
+                    .deleteImage {
+                        position: absolute;
+                        top: 50%;
+                        right: -25%;
+                        transform: translateY(-50%);
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        color: colors.$colorRed;
+                        .icon {
+                            padding: 0.35rem;
+                            font-size: 2rem;
+                            background-color: colors.$inputButtonColor;
+                            border-radius: 50%;
+                            transition: transform 150ms ease-in-out;
+                            &:hover {
+                                transform: scale(1.05);
+                            }
+                            &:active,
+                            &:focus {
+                                transform: scale(0.9);
+                            }
+                        }
+                    }
+                }
+                .imageName {
+                    font-size: 0.95rem;
+                    color: colors.$bgColor2;
+                    font-weight: 500;
+                    padding-top: 0.4rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .inputField > .alreadyHave {
+            padding-top: 0.7rem;
+            p {
+                text-align: left;
+                font-weight: 300;
+                color: colors.$lightColor;
+                .link {
+                    color: colors.$buttonColor;
+                    text-decoration: underline;
+                    padding-left: 0.25rem;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .iconButtons {
+            position: absolute;
+            top: 5%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            .icons {
+                cursor: pointer;
+                padding: 0.23rem;
+                font-weight: 600;
+                color: colors.$fontColor;
+                font-size: 2rem;
+                transition: background 100ms ease-in-out;
+                border-radius: 30px;
+                &:hover,
+                &:active {
+                    background: colors.$lightGreyColor;
+                }
+            }
+        }
+        .exit {
+            left: 4%;
+        }
+        .previous {
+            right: 4%;
+        }
+    }
+}
+.popupCard {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    background: #000;
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 1rem 0.7rem;
+        color: colors.$fontColor;
+        line-height: 0%;
+        background: rgba(148, 3, 3, 0.945);
+        transition: background 100ms linear;
+        &:active {
+            background: rgba(148, 3, 3, 0.712);
+        }
+    }
+    p {
+        width: 100%;
+        padding: 0rem 0.7rem;
+    }
+}

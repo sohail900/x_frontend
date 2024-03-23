@@ -1,0 +1,24 @@
+@use '../abstracts/colors';
+.loader-layout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .loader {
+        width: 35px;
+        height: 35px;
+        border: 4px solid #49494975;
+        border-bottom-color: colors.$buttonColor;
+        border-radius: 50%;
+        display: inline-block;
+        animation: rotation 850ms linear infinite;
+    }
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

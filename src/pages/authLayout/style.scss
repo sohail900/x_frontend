@@ -1,0 +1,149 @@
+@use '../../abstracts/colors';
+@mixin centerDiv() {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.container {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0rem 5rem;
+    @media screen and (max-width: 1400px) {
+        padding: 0rem 2rem;
+    }
+}
+@media screen and (max-width: 980px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1.5rem 5rem;
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 560px) {
+    .container {
+        padding: 1.5rem 2rem;
+    }
+}
+@media screen and (max-width: 460px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+}
+.backgroundSection {
+    width: max-content;
+    height: auto;
+    background-image: radial-gradient(
+        rgba(colors.$buttonColor, 1) 1px,
+        transparent 1px
+    );
+    background-position: 50% 50%;
+    background-size: 1.1rem 1.1rem;
+    border-radius: 1.25rem;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    backdrop-filter: blur(20px);
+    img {
+        width: 200px;
+        transition: transform 550ms ease-in-out;
+        &:hover {
+            transform: rotate(12deg) translateY(-30px);
+        }
+        @media screen and (max-width: 980px) {
+            & {
+                position: relative;
+                width: 80px;
+            }
+        }
+    }
+}
+.containerSection {
+    width: auto;
+    height: auto;
+    @include centerDiv();
+    .typoGraphy {
+        width: 100%;
+        h1 {
+            font-size: clamp(4.7rem, 3vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+    }
+    .action {
+        display: grid;
+        width: 50%;
+        gap: 1.4rem;
+        .btn {
+            width: clamp(270px, 40vw, 210px);
+            padding: 0.5rem 0rem;
+            border-radius: 30px;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+            color: colors.$fontColor;
+            font-size: 1rem;
+            transition: all 200ms ease-in-out;
+            color: colors.$fontColor;
+        }
+        .createBtn {
+            border: 1px solid rgba(0, 0, 0, 0);
+            background-color: colors.$buttonColor;
+            &:hover {
+                background-color: transparent;
+                border: 1px solid colors.$buttonColor;
+            }
+        }
+        .alreadyHave {
+            .loginBtn {
+                background-color: transparent;
+                border: 1px solid #ffffff7e;
+                color: colors.$buttonColor;
+                margin-top: 1rem;
+                &:hover {
+                    border: 1px solid colors.$buttonColor;
+                    background-color: rgba(colors.$buttonColor, 0.2);
+                }
+            }
+            p {
+                font-size: 1rem;
+                color: colors.$fontColor;
+                font-weight: 500;
+            }
+        }
+        span {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+            font-size: 1rem;
+            &::after {
+                content: '';
+                width: 50%;
+                height: 0.05rem;
+                background-color: colors.$fontColor;
+                opacity: 0.5;
+                border-radius: 30px;
+            }
+            &::before {
+                content: '';
+                width: 50%;
+                height: 0.05rem;
+                background-color: colors.$fontColor;
+                opacity: 0.5;
+                border-radius: 30px;
+            }
+        }
+    }
+}

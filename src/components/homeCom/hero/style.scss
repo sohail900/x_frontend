@@ -1,0 +1,277 @@
+@use '../../../abstracts/colors';
+@mixin displayFlex() {
+    display: flex;
+    align-items: center;
+}
+.main_section {
+    width: auto;
+    height: 100%;
+    border-left: 1px solid colors.$lightGreyColor;
+    border-right: 1px solid colors.$lightGreyColor;
+    overflow-y: auto;
+    position: relative;
+    border-bottom: 1px solid colors.$lightGreyColor;
+    &::-webkit-scrollbar {
+        width: 5px;
+        padding: 0.3rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.295);
+        border-radius: 30px;
+    }
+
+    .headerSec {
+        padding: 0.8rem 0rem;
+        border-bottom: 1px solid colors.$lightGreyColor;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        backdrop-filter: blur(40px);
+        h2 {
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+}
+.main_section .tweet {
+    border-bottom: 1px solid colors.$lightGreyColor;
+    padding: 0.8rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    .user {
+        width: 2.7rem;
+        height: 2.7rem;
+        border-radius: 50%;
+        overflow: hidden;
+        .img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 2px solid colors.$buttonColor;
+        }
+    }
+    .inputField {
+        flex: 1;
+        .textarea {
+            background-color: transparent;
+            border: none;
+            resize: none;
+            outline: none;
+            width: 100%;
+            font-size: 1.22rem;
+            line-height: 25px;
+            color: colors.$fontColor;
+            margin-bottom: 0.65rem;
+            padding: 0.8rem 0.7rem 1.5rem 0.7rem;
+            overflow-y: hidden;
+            transition: border 300ms linear;
+            &:focus,
+            &:focus-visible,
+            &:focus-within {
+                border-bottom: 1px solid colors.$lightGreyColor;
+            }
+            @media screen and (max-width: 430px) {
+                font-size: 1rem;
+            }
+        }
+        button {
+            float: right;
+            width: max-content;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            outline: none;
+            border: none;
+            background-color: colors.$buttonColor;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 200ms linear;
+            cursor: pointer;
+            &:disabled {
+                opacity: 0.6;
+            }
+        }
+    }
+    .popUp {
+        position: absolute;
+        background: colors.$buttonColor;
+        padding: 0.5rem 1.3rem;
+        border-radius: 8px;
+        box-shadow: 0px 1px 20px rgba(225, 225, 225, 0.2);
+        right: 1%;
+        transition: all 200ms ease-in-out;
+    }
+    @media screen and (max-width: 430px) {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.5rem 1rem;
+        gap: 0.6rem;
+    }
+}
+.main_section .allTweets {
+    padding: 1rem 0rem;
+    .tweets {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid colors.$lightGreyColor;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        .userProfile {
+            width: 2.8rem;
+            height: 2.8rem;
+            overflow: hidden;
+            margin-top: -0.4rem;
+            img {
+                border-radius: 50%;
+                width: 100%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+        }
+        .userContents {
+            width: 90%;
+            .userInfo {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.3rem;
+                margin-bottom: 0.3rem;
+                h3 {
+                    font-size: 0.93rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    .link {
+                        text-decoration: none;
+                    }
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                p {
+                    font-size: 0.78rem;
+                    color: colors.$lightColor;
+                    font-weight: 500;
+                    span {
+                        margin-left: 0.6rem;
+                        position: relative;
+                        &::before {
+                            content: '';
+                            width: 5px;
+                            height: 1.5px;
+                            background-color: colors.$lightColor;
+                            position: absolute;
+                            border-radius: 50%;
+                            left: -13%;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+            .userTweets {
+                font-size: 0.95rem;
+                line-height: 22px;
+                font-weight: 400;
+                margin-bottom: 0.7rem;
+                color: rgba(225, 225, 225, 0.98);
+            }
+
+            .reactions {
+                @include displayFlex();
+                justify-content: space-between;
+                font-size: 1rem;
+                width: auto;
+                margin: 1rem auto -0.6rem auto;
+                cursor: pointer;
+                .recButton {
+                    @include displayFlex();
+                    gap: 0.3rem;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    width: auto;
+                    line-height: 50%;
+                    .icon-container {
+                        all: unset;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        transition: background 200ms ease-in-out;
+                        .icon {
+                            font-size: 1.1rem;
+                            color: colors.$lightColor;
+                            transition: color 300ms ease-in-out,
+                                scale 200ms ease-in-out,
+                                transform 500ms ease-in-out;
+                        }
+                        .likesIcon {
+                            color: colors.$colorPinkii;
+                            transition: color 300ms ease-in-out,
+                                scale 100ms ease-in-out,
+                                transform 400ms ease-in-out;
+                        }
+                        &:hover {
+                            background-color: rgba(
+                                colors.$colorPinkiiTrans,
+                                0.2
+                            );
+                            .icon {
+                                color: colors.$colorPinkii;
+                            }
+                        }
+                        &:active {
+                            background-color: rgba(
+                                colors.$colorPinkiiTrans,
+                                0.2
+                            );
+                            .icon {
+                                color: colors.$colorPinkii;
+                                scale: 1.6;
+                                transform: translateY(-5px);
+                            }
+                        }
+                    }
+                    .delete-icon {
+                        &:hover {
+                            background-color: rgba(colors.$colorRed, 0.1);
+                            .icon {
+                                color: colors.$colorRed;
+                            }
+                        }
+                    }
+                    .update-icon {
+                        &:hover {
+                            background-color: rgba(colors.$colorGreen, 0.1);
+                            .icon {
+                                color: colors.$colorGreen;
+                            }
+                        }
+                    }
+                    .likesCount {
+                        font-size: 0.65rem;
+                        color: #474a4e;
+                        margin-left: -0.35rem;
+                        margin-top: 0.2rem;
+                        font-weight: 700;
+                    }
+                    .addCol {
+                        color: colors.$colorPinkii;
+                        font-weight: 700;
+                    }
+                }
+                .tooltip-style {
+                    font-size: 0.7rem;
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 30px;
+                    color: colors.$buttonColor;
+                    font-weight: 500;
+                }
+            }
+        }
+        @media screen and (max-width: 430px) {
+            padding: 0.5rem 1rem;
+        }
+    }
+}

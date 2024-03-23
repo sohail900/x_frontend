@@ -1,0 +1,348 @@
+@use '../../../abstracts/colors';
+
+.leftSideBar {
+    padding: 0.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .topSection {
+        .xLogo {
+            width: 2.2rem;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            margin-left: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        ul {
+            .sideBarLinks {
+                margin-bottom: 0.55rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.55rem;
+                width: max-content;
+                border-radius: 30px;
+                text-decoration: none;
+                color: #ffffffb6;
+                transition: padding, background-color 100ms linear;
+                line-height: 100%;
+                .icon {
+                    font-size: 1.8rem;
+                    vertical-align: middle;
+                }
+                .sidebarContent {
+                    font-size: 1.2rem;
+                    vertical-align: middle;
+                }
+                &:hover,
+                &:active {
+                    background-color: colors.$lightGreyColor;
+                    font-weight: 500;
+                    color: colors.$fontColor;
+                }
+                @media screen and (max-width: 1050px) {
+                    & {
+                        .sidebarContent {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .sideBarButton {
+                width: 100%;
+                padding: 0.6rem 0rem;
+                border-radius: 30px;
+                background-color: colors.$buttonColor;
+                outline: none;
+                border: none;
+                color: #fff;
+                font-weight: 600;
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+                @media screen and (max-width: 1050px) {
+                    display: none;
+                }
+            }
+            .toggleRightSidebar {
+                border: none;
+                outline: none;
+                background-color: colors.$buttonColor;
+                color: #fff;
+                font-weight: 600;
+                cursor: pointer;
+                padding: 0.45rem;
+                border-radius: 5px;
+                margin-left: 0.3rem;
+                margin-bottom: 0.5rem;
+                line-height: 50%;
+                border: 1px solid rgba(0, 0, 0, 0);
+                transition: all 200ms ease-in-out;
+                font-size: 1.6rem;
+                display: none;
+                &:hover {
+                    background-color: transparent;
+                    color: colors.$buttonColor;
+                    border: 1px solid colors.$buttonColor;
+                    border-style: double;
+                    box-shadow: 0.2px 0.4px 8px colors.$buttonColor;
+                }
+                &:active {
+                    transform: scale(0.9);
+                }
+                @media screen and (max-width: 841px) {
+                    display: block;
+                }
+            }
+        }
+    }
+    .profileSection {
+        all: unset;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        padding: 0.4rem;
+        border-radius: 30px;
+        gap: 0.5rem;
+        cursor: pointer;
+        &:hover {
+            background-color: colors.$lightGreyColor;
+        }
+        .profileImg {
+            width: 2.5rem;
+            height: 2.5rem;
+            .img {
+                width: 100%;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .profileInfo {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            .profileName {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+            .profileUsername {
+                font-size: 0.85rem;
+                font-weight: 400;
+                color: colors.$lightColor;
+            }
+
+            @media screen and (max-width: 1050px) {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: 1050px) {
+        padding: 1rem 0.4rem;
+    }
+    .logout-button {
+        position: absolute;
+        bottom: 14%;
+        left: 2%;
+        width: 200px;
+        padding: 1.2rem 0rem;
+        border-radius: 10px;
+        background: #000;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition: all 200ms ease-in-out;
+        z-index: 100;
+        box-shadow: 1px 1px 10px 0px rgba(225, 225, 225, 0.3);
+        .button {
+            all: unset;
+            padding: 0.7rem 1rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 200ms ease-in-out;
+            position: relative;
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: 0.6px;
+            gap: 0.8rem;
+            .btn-icon {
+                font-size: 1.1rem;
+                margin-top: 0.3rem;
+            }
+            &:hover {
+                background-color: rgba(225, 225, 225, 0.2);
+            }
+            &:active {
+                background-color: rgba(225, 225, 225, 0.4);
+            }
+            span {
+                margin-left: 0.2rem;
+            }
+        }
+    }
+    .hBtn {
+        left: -200%;
+    }
+}
+.rightSidebar {
+    padding: 0.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 0px;
+        padding: 0.3rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.295);
+        border-radius: 30px;
+    }
+    .searchBarSection {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        background-color: colors.$tColor;
+        border-radius: 30px;
+        color: #fff;
+        width: auto;
+        padding: 0rem 0.8rem;
+        input {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 0.8rem 0rem;
+            color: #fff;
+            font-size: 0.9rem;
+            width: 90%;
+            font-weight: 400;
+        }
+        .icons {
+            width: 10%;
+        }
+    }
+    .premiumSection {
+        background-color: colors.$tColor;
+        padding: 0.9rem 1rem;
+        border-radius: 10px;
+        display: grid;
+        gap: 0.4rem;
+        width: auto;
+
+        h3 {
+            font-size: 1.1rem;
+        }
+        p {
+            font-size: 0.85rem;
+            color: colors.$fontColor;
+            line-height: 23px;
+            letter-spacing: 0.2px;
+            font-weight: 400;
+        }
+        button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0.6rem 1rem;
+            border-radius: 30px;
+            background-color: colors.$buttonColor;
+            color: #fff;
+            font-weight: 600;
+            width: fit-content;
+        }
+    }
+    .followSection {
+        background-color: colors.$tColor;
+        padding: 0.7rem 0rem;
+        border-radius: 10px;
+        width: auto;
+        h2 {
+            font-size: 1.1rem;
+            padding-left: 0.7rem;
+            margin-bottom: 1rem;
+        }
+        .followOthers {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: background-color 100ms ease-in-out;
+            width: 100%;
+            .flex {
+                display: flex;
+                gap: 0.3rem;
+                width: 75%;
+            }
+            .flex .profileImage {
+                width: 2.4rem;
+                height: 2.4rem;
+                img {
+                    border-radius: 50%;
+                    width: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 1/1;
+                }
+            }
+            .flex .userContents {
+                overflow: hidden;
+                width: 70%;
+                h3 {
+                    font-size: 0.9rem;
+                    margin-bottom: 0.3rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                p {
+                    font-size: 0.8rem;
+                    color: colors.$lightColor;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .followOthers > button {
+            border: none;
+            outline: none;
+            background-color: colors.$fontColor;
+            border-radius: 30px;
+            height: 30px;
+            width: 25%;
+            color: #000;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+        }
+        .followOthers:hover {
+            background-color: colors.$lightGreyColor;
+        }
+    }
+}
+@media screen and (max-width: 841px) {
+    .rightSidebar {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 350px;
+        height: 100dvh;
+        background-color: black;
+        z-index: 1;
+        overflow: visible;
+        box-shadow: 1px 0.8px 30px -5px rgba(225, 225, 225, 0.2);
+    }
+    .close {
+        right: -2000px;
+        display: none;
+    }
+    .rightSidebar,
+    .close {
+        transition: all 200ms ease-in-out;
+    }
+}

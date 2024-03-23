@@ -1,0 +1,134 @@
+@use '../../abstracts/colors';
+.loginSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(colors.$bgColor2, 0.6);
+    transition: all 300ms ease-in-out;
+    .model {
+        width: clamp(340px, 50vw, 500px);
+        height: auto;
+        padding: 1rem 1rem 1.5rem 1rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: colors.$mainColor;
+        border-radius: 10px;
+        gap: 2rem;
+        overflow-y: auto;
+        .modelLogo {
+            width: 3.7rem;
+            height: 3.7rem;
+            img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1/1;
+            }
+        }
+        .inputField {
+            h2 {
+                padding-bottom: 0.8rem;
+                font-weight: 600;
+                font-size: 1.55rem;
+            }
+        }
+        .inputField > form {
+            display: grid;
+            gap: 1rem;
+            input {
+                width: 300px;
+                background-color: transparent;
+                outline: none;
+                border: 1px solid colors.$bgColor2;
+                padding: 0.7rem 0.6rem;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 1rem;
+                transition: border 200ms ease-in-out;
+                &:active,
+                &:focus {
+                    border: 1px solid colors.$lightColor;
+                }
+            }
+            .showError {
+                color: colors.$colorRed;
+                border-color: rgba(colors.$colorRed, 0.507);
+            }
+            .error {
+                color: rgba(colors.$colorRed, 0.8);
+                font-weight: 700;
+                font-size: 0.93rem;
+                margin-top: -0.6rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 100%;
+            }
+            button {
+                background-color: colors.$fontColor;
+                outline: none;
+                border: 1px solid colors.$lightColor;
+                padding: 0.5rem 0.6rem;
+                border-radius: 30px;
+                font-size: 1rem;
+                font-weight: 600;
+                color: colors.$mainColor;
+                cursor: pointer;
+                transition: transform 100ms linear;
+                transition: transform 200ms ease-in-out;
+                &:hover {
+                    transform: scale(1.03);
+                }
+                &:active,
+                &:focus {
+                    transform: scale(0.98);
+                }
+                &:disabled {
+                    background-color: colors.$lightColor;
+                    border: none;
+                    cursor: default;
+                }
+            }
+        }
+        .inputField > .newAccount {
+            padding-top: 0.7rem;
+            p {
+                font-weight: 300;
+                color: colors.$lightColor;
+                .link {
+                    color: colors.$buttonColor;
+                    text-decoration: underline;
+                    padding-left: 0.25rem;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .exit {
+            position: absolute;
+            top: 5%;
+            left: 4%;
+            cursor: pointer;
+            .exitButton {
+                padding: 0.23rem;
+                font-weight: 600;
+                color: colors.$fontColor;
+                font-size: 2rem;
+                transition: background 100ms ease-in-out;
+                border-radius: 30px;
+                &:hover,
+                &:active {
+                    background: colors.$lightGreyColor;
+                }
+            }
+        }
+    }
+}
