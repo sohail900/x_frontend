@@ -6,7 +6,6 @@ const RightSidebar: React.FC<SideBarProps> = ({
     isSidebarOpen,
 }): React.ReactElement => {
     const { data, isLoading } = useGetAllUser()
-    const API_BASE_URL = import.meta.env.VITE_API_URL
     return (
         <>
             <section
@@ -44,7 +43,7 @@ const RightSidebar: React.FC<SideBarProps> = ({
                                             <div className='flex'>
                                                 <div className='profileImage'>
                                                     <img
-                                                        src={`${API_BASE_URL}/${imagePath}`}
+                                                        src={`${imagePath}`}
                                                         alt=''
                                                     />
                                                 </div>
