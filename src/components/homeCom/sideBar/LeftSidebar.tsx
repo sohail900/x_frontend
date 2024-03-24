@@ -9,8 +9,6 @@ import { items } from '../../../constants/items'
 import { d } from '../../../assets/index'
 import './style.scss'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL
-
 const LeftSidebar = ({ toggleSidebar }: SideBarProps): ReactElement => {
     const [toggle, setToggle] = useState<boolean>(true)
     const navigate = useNavigate()
@@ -67,7 +65,7 @@ const LeftSidebar = ({ toggleSidebar }: SideBarProps): ReactElement => {
                 >
                     <div className='profileImg'>
                         <img
-                            src={`${API_BASE_URL}/${userData.imagePath}`}
+                            src={`${userData.imagePath}`}
                             alt='user-profile-image'
                             className='img'
                         />
