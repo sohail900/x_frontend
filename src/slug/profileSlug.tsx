@@ -8,7 +8,6 @@ import { Loading } from '../loading/loading'
 import { useSlugQuery } from '../hooks/useSlug'
 import { capitalizedName } from '../util/capName'
 import './style.scss'
-const API_URL = import.meta.env.VITE_API_URL
 const ProfileSlug = () => {
     const params = useParams()
     const authUser = useSelector(
@@ -34,7 +33,7 @@ const ProfileSlug = () => {
                 <div className='user-profile'>
                     <div className='user-profile-image'>
                         <img
-                            src={`${API_URL}/${profile.imagePath}`}
+                            src={`${profile.imagePath}`}
                             alt='user-profile-image'
                         />
                     </div>
