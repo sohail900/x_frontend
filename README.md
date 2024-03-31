@@ -1,27 +1,17 @@
-[contributors-shield]: https://img.shields.io/github/contributors/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
-[contributors-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
-[forks-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/network/members
-[stars-shield]: https://img.shields.io/github/stars/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
-[stars-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/stargazers
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 
-### Twitter Clone Frontend
+:sparkling_heart: ### Twitter Clone Frontend
 
 This is the frontend repository for the Twitter clone project. 
 The project aims to replicate the basic functionality and design of the popular social media platform Twitter.
 
-### Features
-
-<b>User Authentication:<b/> Allow users to sign up, log in, and log out of their accounts.
-<b>Timeline:</b> Display a feed of tweets from users followed by the authenticated user.
-<b>Tweeting:</b> Enable users to compose and post tweets to their followers.
-<b>User Profiles:</b> Provide user profiles with information about the user and their tweets.
-<b>Likes:</b> Implement features for liking tweets.
-
+:sparkling_heart: ### Features
+<ul>
+<li><b>User Authentication:<b/> Allow users to sign up, log in, and log out of their accounts.</li>
+<li><b>Timeline:</b> Display a feed of tweets from users followed by the authenticated user.</li>
+<li><b>Tweeting:</b> Enable users to compose and post tweets to their followers.</li>
+<li><b>User Profiles:</b> Provide user profiles with information about the user and their tweets.</li>
+<li><b>Likes:</b> Implement features for liking tweets.</li>
+</ul>
 ### Built With
 <p align="center">
   <a href="https://skillicons.dev">
@@ -33,7 +23,7 @@ The project aims to replicate the basic functionality and design of the popular 
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+:sparkling_heart: ## Getting Started
 
 To get started with the project, follow these steps:
 
