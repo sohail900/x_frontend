@@ -4,10 +4,15 @@
 [forks-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/network/members
 [stars-shield]: https://img.shields.io/github/stars/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
 [stars-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/stargazers
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 ### Twitter Clone Frontend
 
-This is the frontend repository for the Twitter clone project. The project aims to replicate the basic functionality and design of the popular social media platform Twitter.
+This is the frontend repository for the Twitter clone project. 
+The project aims to replicate the basic functionality and design of the popular social media platform Twitter.
 
 ### Features
 
@@ -41,7 +46,6 @@ Clone the repository:
 2. Install NPM packages
     ```sh
        npm install
-    ```
     ```
 3. Start the development server:
     ```sh
