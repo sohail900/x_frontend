@@ -1,9 +1,9 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[contributors-shield]: https://img.shields.io/github/contributors/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
+[contributors-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
+[forks-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/network/members
+[stars-shield]: https://img.shields.io/github/stars/chingu-voyages/moonshot-chingu-quiz.svg?style=for-the-badge
+[stars-url]: https://github.com/chingu-voyages/moonshot-chingu-quiz/stargazers
 
 ### Twitter Clone Frontend
 
@@ -11,19 +11,18 @@ This is the frontend repository for the Twitter clone project. The project aims 
 
 ### Features
 
-User Authentication: Allow users to sign up, log in, and log out of their accounts.
-Timeline: Display a feed of tweets from users followed by the authenticated user.
-Tweeting: Enable users to compose and post tweets to their followers.
-User Profiles: Provide user profiles with information about the user and their tweets.
-Follow/Unfollow: Allow users to follow and unfollow other users to customize their timeline.
-Likes and Retweets: Implement features for liking and retweeting tweets.
+<b>User Authentication:<b/> Allow users to sign up, log in, and log out of their accounts.
+<b>Timeline:</b> Display a feed of tweets from users followed by the authenticated user.
+<b>Tweeting:</b> Enable users to compose and post tweets to their followers.
+<b>User Profiles:</b> Provide user profiles with information about the user and their tweets.
+<b>Likes:</b> Implement features for liking tweets.
 
 ### Built With
-
--   [![React][React.js]][React-url]
--   [![Redux][Redux.dev]][Redux-url]
--   [![Typescript][Typescript.com]][Typescript-url]
--   [![Sass][Sass-lang.com]][Sass-url]
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,redux,typescript,sass,npm" />
+  </a>
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -40,10 +39,10 @@ Clone the repository:
     git clone https://github.com/sohail900/x_frontend
     ```
 2. Install NPM packages
-    ````sh
+    ```sh
        npm install
     ```
-    ````
+    ```
 3. Start the development server:
     ```sh
     npm run dev
