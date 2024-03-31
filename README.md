@@ -1,10 +1,10 @@
 
-:sparkling_heart: ### Twitter Clone Frontend
+:sparkling_heart: <h1>Twitter Clone Frontend</h1>
 
 This is the frontend repository for the Twitter clone project. 
 The project aims to replicate the basic functionality and design of the popular social media platform Twitter.
 
-:sparkling_heart: ### Features
+:sparkling_heart: <h1> Features</h1>
 <ul>
 <li><b>User Authentication:<b/> Allow users to sign up, log in, and log out of their accounts.</li>
 <li><b>Timeline:</b> Display a feed of tweets from users followed by the authenticated user.</li>
@@ -12,7 +12,7 @@ The project aims to replicate the basic functionality and design of the popular 
 <li><b>User Profiles:</b> Provide user profiles with information about the user and their tweets.</li>
 <li><b>Likes:</b> Implement features for liking tweets.</li>
 </ul>
-### Built With
+:sparkling_heart: <h1>Built With</h1>
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=react,redux,typescript,sass,npm" />
@@ -23,7 +23,7 @@ The project aims to replicate the basic functionality and design of the popular 
 
 <!-- GETTING STARTED -->
 
-:sparkling_heart: ## Getting Started
+:sparkling_heart: <h1>Getting Started</h1>
 
 To get started with the project, follow these steps:
 
